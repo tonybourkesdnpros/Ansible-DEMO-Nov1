@@ -1,6 +1,7 @@
 {% for item in underlay['devices'][inventory_hostname]['interfaces'] %}
 interface {{ item }}
 {% if 'Ethernet' in item %}
+   no switchport
    ip address unnumbered loopback0
    ip ospf area 0
    ip ospf network point-to-point
@@ -13,5 +14,5 @@ interface {{ item }}
 router bgp {{ underlay['devices'][inventory_hostname]['BGP']['ASN']}}
    router-id {{ loopback }}
 
-router ospf 
+router ospf 10
    router-id {{ loopback }}
