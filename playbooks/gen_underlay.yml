@@ -1,0 +1,12 @@
+---
+- hosts: leafs, spines
+  name: Generate configuration for underlay
+  tasks:
+  - name: Load YAML into dictionary
+    include_vars:
+      file: "{{lookup('env','PWD')}}/models/underlay.yml"
+      name: underlay
+  - name: Gen EOS syntax
+    template:
+      src: "{{lookup('env','PWD')}}/templates/underlay.j2"
+      dest: "{{lookup('env','PWD')}}/configs/{{inventory_hostname}}_underlay.cfg"

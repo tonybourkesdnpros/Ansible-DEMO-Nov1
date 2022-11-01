@@ -1,0 +1,10 @@
+---
+- hosts: leafs, spines
+  name: This is play running against leaf1
+  tasks:
+  - name: Add VLAN
+    arista.eos.eos_vlans:
+      config:
+      - vlan_id: 100
+        name: VLAN_100
+      state: merged

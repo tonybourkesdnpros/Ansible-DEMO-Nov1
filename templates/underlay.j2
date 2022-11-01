@@ -1,0 +1,7 @@
+{% for item in underlay['devices'][inventory_hostname]['interfaces'] %}
+interface {{ item }}
+   ip address {{ underlay['devices'][inventory_hostname]['interfaces'][item] }}
+{% endfor %}
+{% set loopback, mask = underlay['devices'][inventory_hostname]['interfaces']['loopback0'].split('/') %}
+router bgp {{ underlay['devices'][inventory_hostname]['BGP']['ASN']}}
+   router-id {{ loopback }}

@@ -1,0 +1,13 @@
+---
+- name: Upload configlets into CVP
+  hosts: CloudVision
+  vars_files:
+    - ../models/CVP_model.yml
+
+
+
+  tasks:
+    - name: Upload configlets
+      arista.cvp.cv_configlet_v3:
+        configlets: "{{ CVP_CONFIGLETS }}"
+        state: present

@@ -1,0 +1,10 @@
+path: "{{lookup('env','PWD')}}" 
+
+CVP_CONFIGLETS:
+  leaf1_underlay: "{{lookup('file','{{path}}/configs/leaf1_underlay.cfg')}}"
+  leaf2_underlay: "{{lookup('file','{{path}}/configs/leaf2_underlay.cfg')}}"
+  leaf3_underlay: "{{lookup('file','{{path}}/configs/leaf3_underlay.cfg')}}"
+  leaf4_underlay: "{{lookup('file','{{path}}/configs/leaf4_underlay.cfg')}}"
+  spine1_underlay: "{{lookup('file','{{path}}/configs/spine1_underlay.cfg')}}"
+  spine2_underlay: "{{lookup('file','{{path}}/configs/spine2_underlay.cfg')}}"
+  spine3_underlay: "{{lookup('file','{{path}}/configs/spine3_underlay.cfg')}}"

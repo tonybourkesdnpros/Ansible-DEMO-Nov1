@@ -1,0 +1,40 @@
+devices:
+  leaf1:
+    interfaces:
+      loopback0: 192.168.101.11/32
+      loopback1: 192.168.102.11/32
+    BGP:
+      ASN: 65101
+  leaf2:
+    interfaces:
+      loopback0: 192.168.101.12/32
+      loopback1: 192.168.102.11/32
+    BGP: 
+      ASN: 65101
+  leaf3:
+    interfaces:
+      loopback0: 192.168.101.13/32
+      loopback1: 192.168.102.13/32
+    BGP:
+      ASN: 65102
+  leaf4:
+    interfaces:
+      loopback0: 192.168.101.14/32
+      loopback1: 192.168.102.13/32
+    BGP: 
+      ASN: 65102
+  spine1:
+    interfaces:
+      loopback0: 192.168.101.101/32
+    BGP: 
+      ASN: 65100
+  spine2:
+    interfaces:
+      loopback0: 192.168.101.102/32
+    BGP: 
+      ASN: 65100
+  spine3:
+    interfaces:
+      loopback0: 192.168.101.103/32
+    BGP:
+      ASN: 65100
