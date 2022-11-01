@@ -3,11 +3,12 @@
   hosts: CloudVision
   vars_files:
     - ../models/CVP_model.yml
-
-
-
   tasks:
     - name: Upload configlets
       arista.cvp.cv_configlet_v3:
         configlets: "{{ CVP_CONFIGLETS }}"
         state: present
+    - name: Apply configlets to devices
+      arista.cvp.cv_device_v3:
+        devices: "{{ CVP_DEVICES }}"
+        apply_mode: strict

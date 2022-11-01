@@ -1,7 +1,17 @@
 {% for item in underlay['devices'][inventory_hostname]['interfaces'] %}
 interface {{ item }}
+{% if 'Ethernet' in item %}
+   ip address unnumbered loopback0
+   ip ospf area 0
+   ip ospf network point-to-point
+{% else %}
    ip address {{ underlay['devices'][inventory_hostname]['interfaces'][item] }}
+   ip ospf area 0
+{% endif %}
 {% endfor %}
 {% set loopback, mask = underlay['devices'][inventory_hostname]['interfaces']['loopback0'].split('/') %}
 router bgp {{ underlay['devices'][inventory_hostname]['BGP']['ASN']}}
+   router-id {{ loopback }}
+
+router ospf 
    router-id {{ loopback }}

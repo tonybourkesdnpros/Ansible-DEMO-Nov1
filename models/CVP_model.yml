@@ -9,3 +9,47 @@ CVP_CONFIGLETS:
   spine2_underlay: "{{lookup('file','{{path}}/configs/spine2_underlay.cfg')}}"
   spine3_underlay: "{{lookup('file','{{path}}/configs/spine3_underlay.cfg')}}"
   tonyb2-alias: "show bgp evpn summary"
+
+CVP_DEVICES:
+  - fqdn: 'leaf1'
+    parentContainerName: 'Leaf'
+    configlets:
+      - 'ATD-INFRA'
+      - 'leaf1-base'
+      - 'leaf1_underlay'
+  - fqdn: 'leaf2'
+    parentContainerName: 'Leaf'
+    configlets:
+      - 'ATD-INFRA'
+      - 'leaf2-base'
+      - 'leaf2_underlay'
+  - fqdn: 'leaf3'
+    parentContainerName: 'Leaf'
+    configlets:
+      - 'ATD-INFRA'
+      - 'leaf3-base'
+      - 'leaf3_underlay'
+  - fqdn: 'leaf4'
+    parentContainerName: 'Leaf'
+    configlets:
+      - 'ATD-INFRA'
+      - 'leaf4-base'
+      - 'leaf4_underlay'
+  - fqdn: 'spine1'
+    parentContainerName: 'Spine'
+    configlets:
+      - 'ATD-INFRA'
+      - 'spine1-base'
+      - 'spine1_underlay'
+  - fqdn: 'spine2'
+    parentContainerName: 'Spine'
+    configlets:
+      - 'ATD-INFRA'
+      - 'spine2-base'
+      - 'spine2_underlay'
+  - fqdn: 'spine3'
+    parentContainerName: 'Spine'
+    configlets:
+      - 'ATD-INFRA'
+      - 'spine3-base'
+      - 'spine3_underlay'
