@@ -8,3 +8,4 @@ CVP_CONFIGLETS:
   spine1_underlay: "{{lookup('file','{{path}}/configs/spine1_underlay.cfg')}}"
   spine2_underlay: "{{lookup('file','{{path}}/configs/spine2_underlay.cfg')}}"
   spine3_underlay: "{{lookup('file','{{path}}/configs/spine3_underlay.cfg')}}"
+  tonyb2-alias: "show bgp evpn summary"
